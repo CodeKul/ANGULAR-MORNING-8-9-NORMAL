@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Directives</h1>
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div [ngClass]="{well : isWell, ourBorder : !isWell }">
+        Android
+      </div>
+      <div>
+        <input type="button" value="Change" (click)="isWell = !isWell">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div [ngStyle]="{'border' : '1px solid red'}">
+        Android
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Custom Attribute Directive</h1>
+      <hr>
+      <div>
+        <input type="text" [resizer]="'200px'">
+      </div>
+      <!--<div>
+       <input type="text" resizer [inWd]="'300px'">
+     </div>-->
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Structural Directives</h1>
+      <hr>
+      <div>
+        <ul>
+          <li *ngFor="let mobile of mobiles;let ind = index;">{{mobile}} -> {{ind}}</li>
+        </ul>
+      </div>
+
+      <div>
+        <ng-container *ngIf="isShown; else elsBlk">
+          Here is if block
+        </ng-container>
+
+        <ng-template #elsBlk>
+          Here is if block
+        </ng-template>
+
+        <div>
+          {{isShown}}
+          <input type="button" (click)="isShown=!isShown" class="btn btn-primary" value="Show">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h1>*ngSwitchCase</h1>
+      <hr>
+      <div [ngSwitch]="day">
+        <div *ngSwitchCase="1">One</div>
+        <div *ngSwitchCase="2">Two</div>
+        <div *ngSwitchCase="3">Three</div>
+      </div>
+
+      <input type="button" (click)="day=1" value="One" />
+      <input type="button" (click)="day=2" value="Two" />
+      <input type="button" (click)="day=3" value="Three" />
+      <div *notIf="isShown">This custom structural directive</div>
+    </div>
+  </div>
+
+</div>

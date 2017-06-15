@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Data Binding</h1>
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+    <h1>Interpolation</h1>
+    <hr>
+    <div class="col-md-12">
+      <div>Name = {{myName}} </div>
+      <div>Expression = {{ 10 * 10}} </div>
+      <div>Function Call = {{ getNm() }} </div>
+      <div>Conditionals = {{ getNm().length > 3 ? "its good" : "really good" }} </div>
+    </div>
+  </div>
+  <div class="row">
+    <h1>Property Binding</h1>
+    <hr>
+    <div class="col-md-12">
+      <div>
+        <input type="text" value="{{myName}}">
+      </div>
+      <div>
+        <input type="text" [value]="myName">
+      </div>
+      <div>
+        <input type="text" [style.border]="'1px solid red'">
+      </div>
+      <div>
+        <input type="text" [style.border]="border">
+      </div>
+      <div>
+        <app-tom [series]="'Mountan View'"></app-tom>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <h1>Event Binding</h1>
+    <hr>
+    <div class="col-md-12">
+      <div>
+        <input type="button" (click)="clicked()" class="btn btn-primary" value="Okay"> {{myName}}
+      </div>
+      <div (mouseenter)="label='codekul'" (mouseleave)="label='codekul.com'">
+          <h1>{{label}}</h1>
+      </div>  
+      <div>
+        <app-jerry (captured)="label=$event"></app-jerry>
+      </div>
+    </div>
+  </div>
+   <div class="row">
+    <h1>Two Way Binding</h1>
+    <hr>
+    <div class="col-md-12">
+      <div>
+        <input type="text"  [(ngModel)]="twoWay">{{twoWay}}
+      </div>
+    </div>
+  </div>
+</div>

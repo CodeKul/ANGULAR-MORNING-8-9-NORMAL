@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <pi-content>
+        <div class="well">
+          This External Content
+        </div>
+        <div>
+          <input type="text" #myContent/>
+          <input type="button" class="btn btn-primary" (click)="callFn()" value="In View And Content" />
+        </div>
+      </pi-content>
+      {{myData}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <app-pi-view>
+      </app-pi-view>
+    </div>
+  </div>
+</div>

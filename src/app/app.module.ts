@@ -19,6 +19,8 @@ import { NotIfDirective } from './directives/not-if.directive';
 import { ServicesComponent } from './services/services.component';
 import { IotComponent } from './services/iot.component';
 import { BitcoinComponent } from './services/bitcoin.component';
+import { FormsComponent } from './forms/forms.component';
+import { TemplateComponent } from './forms/template.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { BitcoinComponent } from './services/bitcoin.component';
     NotIfDirective,
     ServicesComponent,
     IotComponent,
-    BitcoinComponent
+    BitcoinComponent,
+    FormsComponent,
+    TemplateComponent
   ],
   imports: [
     BrowserModule,

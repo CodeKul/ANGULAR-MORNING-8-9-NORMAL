@@ -1,0 +1,74 @@
+<div class="container">
+  <div class="row">
+    <h2>Create Your Simple Registration Form</h2>
+
+    <form class="form-horizontal" #myForm="ngForm" (ngSubmit)="wowSubmit()">
+      <fieldset>
+
+        <!-- Form Name -->
+        <legend>Register Here</legend>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="textinput">First Name</label>
+          <div class="col-md-4">
+
+            <input id="textinput" 
+              name="fstNm" 
+              placeholder="Insert your First Name" 
+              class="form-control input-md" 
+              required="" 
+              type="text"
+              [(ngModel)]="user.fstNm">
+
+            <span class="help-block"> </span>
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="textinput">Last Name</label>
+          <div class="col-md-4">
+
+            <input 
+              id="textinput" 
+              name="lstNm" 
+              placeholder="Insert your Last Name" 
+              class="form-control input-md" 
+              required="" 
+              type="text"
+              [(ngModel)]="user.lstNm">
+
+            <span class="help-block"> </span>
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="textinput">Email</label>
+          <div class="col-md-4">
+
+            <input 
+              id="textinput" 
+              name="email" 
+              placeholder="Insert your Email" 
+              class="form-control input-md" 
+              required="" 
+              type="text"
+              [(ngModel)]="user.email">
+
+            <span class="help-block"> </span>
+          </div>
+        </div>
+      
+        <!-- Button -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="singlebutton"> </label>
+          <div class="col-md-4">
+            <button type="submit"  id="singlebutton" name="singlebutton" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>

@@ -2,14 +2,14 @@
   <div class="row">
     <h2>Create Your Simple Registration Form</h2>
 
-    <form class="form-horizontal" #myForm="ngForm" (ngSubmit)="wowSubmit()">
+    <form class="form-horizontal" #myForm="ngForm" (ngSubmit)="wowSubmit(myForm)">
       <fieldset>
 
         <!-- Form Name -->
         <legend>Register Here</legend>
 
         <!-- Text input-->
-        <div class="form-group">
+        <div class="form-group" ngModelGroup="dmGrm">
           <label class="col-md-4 control-label" for="textinput">First Name</label>
           <div class="col-md-4">
 
@@ -17,16 +17,17 @@
               name="fstNm" 
               placeholder="Insert your First Name" 
               class="form-control input-md" 
-              required="" 
+              required 
               type="text"
-              [(ngModel)]="user.fstNm">
+              [(ngModel)]="user.fstNm"
+              #fstNm="ngModel">
 
-            <span class="help-block"> </span>
+            <span class="help-block" *ngIf="fstNm.invalid">Enter First Name</span>
           </div>
-        </div>
+        
 
         <!-- Text input-->
-        <div class="form-group">
+      
           <label class="col-md-4 control-label" for="textinput">Last Name</label>
           <div class="col-md-4">
 
@@ -35,11 +36,12 @@
               name="lstNm" 
               placeholder="Insert your Last Name" 
               class="form-control input-md" 
-              required="" 
+              required
               type="text"
-              [(ngModel)]="user.lstNm">
+              [(ngModel)]="user.lstNm"
+              #lstNm="ngModel">
 
-            <span class="help-block"> </span>
+            <span class="help-block" *ngIf="lstNm.invalid">Enter Last Name</span>
           </div>
         </div>
 
@@ -53,11 +55,13 @@
               name="email" 
               placeholder="Insert your Email" 
               class="form-control input-md" 
-              required="" 
+              required
+              pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" 
               type="text"
-              [(ngModel)]="user.email">
+              [(ngModel)]="user.email"
+              #email = "ngModel">
 
-            <span class="help-block"> </span>
+            <span class="help-block" *ngIf="email.invalid">Enter Valid Email </span>
           </div>
         </div>
       
@@ -65,7 +69,7 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="singlebutton"> </label>
           <div class="col-md-4">
-            <button type="submit"  id="singlebutton" name="singlebutton" class="btn btn-primary">Submit</button>
+            <button [disabled]="myForm.form.invalid" type="submit"  id="singlebutton" name="singlebutton" class="btn btn-primary">Submit</button>
           </div>
         </div>
       </fieldset>

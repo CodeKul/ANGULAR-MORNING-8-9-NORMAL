@@ -18,6 +18,6 @@ export class TemplateComponent implements OnInit {
   }
 
   wowSubmit(form?: NgForm) {
-    console.log(this.user);
+    console.log(form);
   }
 }

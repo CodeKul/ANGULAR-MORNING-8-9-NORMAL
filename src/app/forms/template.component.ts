@@ -12,6 +12,10 @@ export class TemplateComponent implements OnInit {
     fstNm: '', lstNm: '', email: ''
   };
 
+  cities = [
+    'Pune', 'Mumbai', 'Sangli', 'Nagpur', 'Satara'
+  ];
+
   constructor() { }
 
   ngOnInit() {

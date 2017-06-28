@@ -2,7 +2,7 @@ import { RemoteService } from './services/remote.service';
 import { BackendService } from './services/backend.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -21,6 +21,7 @@ import { IotComponent } from './services/iot.component';
 import { BitcoinComponent } from './services/bitcoin.component';
 import { FormsComponent } from './forms/forms.component';
 import { TemplateComponent } from './forms/template.component';
+import { DataDrivenComponent } from './forms/data-driven.component';
 
 @NgModule({
   declarations: [
@@ -39,12 +40,14 @@ import { TemplateComponent } from './forms/template.component';
     IotComponent,
     BitcoinComponent,
     FormsComponent,
-    TemplateComponent
+    TemplateComponent,
+    DataDrivenComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    ReactiveFormsModule
   ],
   providers: [BackendService, RemoteService],
   bootstrap: [AppComponent]

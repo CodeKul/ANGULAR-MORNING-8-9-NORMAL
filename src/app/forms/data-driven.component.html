@@ -19,7 +19,7 @@
               class="form-control input-md" 
               type="text">
 
-            <span class="help-block" >Enter First Name</span>
+            <span class="help-block" *ngIf="form.controls.fstNm.invalid">Enter First Name</span>
           </div>
         
 
@@ -35,7 +35,7 @@
               class="form-control input-md" 
               type="text">
 
-            <span class="help-block">Enter Last Name</span>
+            <span class="help-block" *ngIf="form.controls.lstNm.invalid">{{form.controls.lstNm.errors.err}}</span>
           </div>
         </div>
 
@@ -51,28 +51,25 @@
               class="form-control input-md" 
               type="text">
 
-            <span class="help-block" >Enter Valid Email </span>
+            <span class="help-block" *ngIf="form.controls.email.invalid">Enter Valid Email </span>
           </div>
         </div>
 
         <div class="form-group">
           <label class="col-md-4 control-label" for="textinput">City</label>
           <div *ngFor="let city of cities">
-
             <input 
               formControlName="city" 
-              class="form-control input-md" 
-              type="radio"> {{city}}
-
+              type="radio"
+              [value]="city"> {{city}}
           </div>
-          <span class="help-block">Enter Valid Email </span>
         </div>
       
         <!-- Button -->
         <div class="form-group">
           <label class="col-md-4 control-label" for="singlebutton"> </label>
           <div class="col-md-4">
-            <button type="submit"  id="singlebutton" name="singlebutton" class="btn btn-primary">Submit</button>
+            <button [disabled]="form.invalid" type="submit"  id="singlebutton" name="singlebutton" class="btn btn-primary">Submit</button>
           </div>
         </div>
       </fieldset>

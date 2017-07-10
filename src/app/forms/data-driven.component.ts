@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, AbstractControl, ValidatorFn } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators, AbstractControl, ValidatorFn, AsyncValidatorFn } from '@angular/forms';
+import { Observable } from 'rxjs/Rx';
 
 @Component({
   selector: 'app-data-driven',
@@ -17,10 +18,14 @@ export class DataDrivenComponent {
     this.form = formBuilder.group({
       fstNm: ['', Validators.compose([
         Validators.required
-      ])],
+      ]), this.asyncEmailVlidator()],
       lstNm: ['', Validators.compose([Validators.required, this.validateLstNm()])],
       email: ['', [Validators.required, Validators.pattern("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")]],
-      city: ['']
+      city: [''],
+      mobiles: formBuilder.array([
+        new FormControl(''),
+        new FormControl('')
+      ])
     });
   }
 
@@ -32,5 +37,19 @@ export class DataDrivenComponent {
     return (c: AbstractControl) => {
       return c.value.charAt(0) !== 'a' ? { err: 'Word does not start from a' } : null;
     };
+  }
+
+  asyncEmailVlidator(): AsyncValidatorFn {
+
+    let fn: AsyncValidatorFn = (c: AbstractControl) => new Promise<any>((res, rej) => {
+      setTimeout(() => {
+        if (c.value.charAt(0) === 'a') {
+          res({ err: 'Starts with a' });
+        }
+        else res(null);
+
+      }, 1000);
+    });
+    return fn;
   }
 }

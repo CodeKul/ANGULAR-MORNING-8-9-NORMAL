@@ -1,5 +1,14 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, Validators, AbstractControl, ValidatorFn, AsyncValidatorFn } from '@angular/forms';
+import {
+  FormArray,
+  FormGroup,
+  FormControl,
+  FormBuilder,
+  Validators,
+  AbstractControl,
+  ValidatorFn,
+  AsyncValidatorFn
+} from '@angular/forms';
 import { Observable } from 'rxjs/Rx';
 
 @Component({
@@ -29,6 +38,9 @@ export class DataDrivenComponent {
     });
   }
 
+  onOkay() {
+    (<FormArray>this.form.controls.mobiles).push(new FormControl());
+  }
   onSubmit() {
     console.log(this.form);
   }

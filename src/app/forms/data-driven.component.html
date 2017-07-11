@@ -51,7 +51,7 @@
         <div class="form-group" formArrayName="mobiles">
           <label class="col-md-4 control-label" for="textinput">City</label>
           <div class="col-md-8" >
-            <input type="text"/><input type="button" value="okay"/>
+            <input type="button" value="okay" (click)="onOkay()"/>
           </div>
           <div *ngFor="let mob of form.controls.mobiles.value; let ind = index;">
             <input type="text" formControlName="{{ind}}"/>

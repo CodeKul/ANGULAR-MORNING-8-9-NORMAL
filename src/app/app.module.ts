@@ -22,6 +22,8 @@ import { BitcoinComponent } from './services/bitcoin.component';
 import { FormsComponent } from './forms/forms.component';
 import { TemplateComponent } from './forms/template.component';
 import { DataDrivenComponent } from './forms/data-driven.component';
+import { LifecycleComponent } from './lifecycle/lifecycle.component';
+import { LifeindComponent } from './lifecycle/lifeind.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { DataDrivenComponent } from './forms/data-driven.component';
     BitcoinComponent,
     FormsComponent,
     TemplateComponent,
-    DataDrivenComponent
+    DataDrivenComponent,
+    LifecycleComponent,
+    LifeindComponent
   ],
   imports: [
     BrowserModule,

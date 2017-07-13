@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-md-12">
+    <h1>Pipes</h1>
+    <hr>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    Date is - {{dt|date:"dd MMM yyyy"}}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    Money is - {{money | currency:"INR" }}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    Money is - {{nm | uppercase }}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    Money is - {{nm | cust:3 }}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <input type="text" [(ngModel)]="ph">
+    <ul >
+      <li *ngFor="let mob of mobiles | filter:ph">{{mob}}</li>
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <input type="text" [(ngModel)]="phIn"> <input type="button" value="Okay" (click)="mobiles.push(phIn)"/>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    Future is {{fut | async}}
+  </div>
+</div>

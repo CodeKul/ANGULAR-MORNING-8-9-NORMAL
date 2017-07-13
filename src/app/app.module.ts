@@ -24,6 +24,9 @@ import { TemplateComponent } from './forms/template.component';
 import { DataDrivenComponent } from './forms/data-driven.component';
 import { LifecycleComponent } from './lifecycle/lifecycle.component';
 import { LifeindComponent } from './lifecycle/lifeind.component';
+import { PipesComponent } from './pipes/pipes.component';
+import { CustPipe } from './pipes/cust.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -45,7 +48,10 @@ import { LifeindComponent } from './lifecycle/lifeind.component';
     TemplateComponent,
     DataDrivenComponent,
     LifecycleComponent,
-    LifeindComponent
+    LifeindComponent,
+    PipesComponent,
+    CustPipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

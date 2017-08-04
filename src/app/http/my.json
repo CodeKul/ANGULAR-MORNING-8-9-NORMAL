@@ -1,0 +1,9 @@
+{
+    "key1": "value",
+    "key2": [
+        {
+            "inKey1": "value"
+        }
+    ],
+    "key3": {}
+}

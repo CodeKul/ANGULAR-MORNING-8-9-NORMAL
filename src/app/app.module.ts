@@ -1,3 +1,4 @@
+import { JokeService } from './http/joke.service';
 import { RemoteService } from './services/remote.service';
 import { BackendService } from './services/backend.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -27,6 +28,7 @@ import { LifeindComponent } from './lifecycle/lifeind.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { CustPipe } from './pipes/cust.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
+import { HttpComponent } from './http/http.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,8 @@ import { FilterPipe } from './pipes/filter.pipe';
     LifeindComponent,
     PipesComponent,
     CustPipe,
-    FilterPipe
+    FilterPipe,
+    HttpComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +62,7 @@ import { FilterPipe } from './pipes/filter.pipe';
     HttpModule,
     ReactiveFormsModule
   ],
-  providers: [BackendService, RemoteService],
+  providers: [BackendService, RemoteService, JokeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
